@@ -1,0 +1,53 @@
+.home-news
+	background-color: #f5f5f5
+	.news-item
+		position: relative
+		.img
+			margin-bottom: 17px
+			a
+				+img-ratio(190/285)
+		.content-wrapper
+			.title
+				height: 90px
+				margin-bottom: 10px
+		&::after
+			position: absolute
+			top: 0
+			right: -15px
+			width: 1px
+			height: 100%
+			content: ''
+			background-color: #e2e2e2
+	.col-lg-3
+		&:last-child
+			.news-item
+				&::after
+					display: none
+	.wrapper-button
+		width: 100%
+		padding: 0 15px
+		.view-more
+			display: flex
+			align-items: center
+			span
+				font-size: 20.83/16*1rem
+				line-height: 76.39px
+				padding-right: 17px
+	@media screen and ( max-width: 991.98px)
+		.news-item
+			margin-bottom: 30px
+			.content-wrapper
+				.title
+					margin-bottom: 0
+		.col-lg-3
+			&:nth-child(2)
+				.news-item
+					&::after
+						display: none
+	@media screen and ( max-width: 767.98px)
+		.news-item
+			.content-wrapper
+				.title
+					height: auto
+			&::after
+				display: none

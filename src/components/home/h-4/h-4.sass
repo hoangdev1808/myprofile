@@ -1,0 +1,75 @@
+.home-partner
+	.tab-panels
+		.tabs
+			.item
+				background-color: rgb(222, 222, 222)
+				width: 556px
+				margin-bottom: 10px
+				color: #767676
+				line-height: 61.14px
+				font-weight: 300
+				padding-left: 40px
+				padding-right: 26px
+				.material-icons
+					color: $white
+					font-size: 24px
+				&.active
+					background-color: $main
+					color: $white
+					font-weight: 700
+		.panel
+			.single-swiper
+				position: relative
+				.item-partner
+					cursor: pointer
+					width: 150px
+					height: 100px
+					margin: 0 auto
+					img
+						width: 100%
+						filter: grayscale(1)
+						transition: all 1s cubic-bezier(.22, .44, 0, 1)
+					@media screen and ( min-width: 991.98px)
+						&:hover
+							img
+								filter: grayscale(0)
+				.swiper-button-next
+					right: -75px
+				.swiper-button-prev
+					@media screen and ( min-width: 992px)
+						display: none
+				@media screen and ( max-width: 1366.98px)
+					.swiper-button-next
+						right: 0
+				@media screen and ( max-width: 575.98px)
+					.swiper-button-next,
+					.swiper-button-prev
+						display: none
+				.swiper-pagination
+					width: auto !important
+					bottom: -30px
+					left: 50%
+					transform: translateX(-50%)
+					&-bullet
+						width: 15px
+						height: 15px
+						&-active
+							background-color: $main
+	@media screen and ( max-width: 1199.98px)
+		.tab-panels
+			.tabs
+				.item
+					width: 100%
+	@media screen and ( max-width: 991.98px)
+		.tab-panels
+			.tabs
+				display: none
+				.item
+					.material-icons
+						display: none
+			.panel
+				margin-top: 30px
+				.single-swiper
+					.item-partner
+						img
+							filter: grayscale(0)

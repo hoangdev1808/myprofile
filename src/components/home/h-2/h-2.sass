@@ -1,0 +1,77 @@
+.home-project
+	.wrapper-slider
+		position: relative
+		.column-slide
+			.swiper-slide
+				margin-bottom: 30px
+			.project-item
+				.img
+					position: relative
+					overflow: hidden
+					+img-ratio(255/390)
+					img
+						transform: scale(1)
+						transition: all .8s cubic-bezier(.22, .44, 0, 1)
+				.content
+					position: absolute
+					top: 50%
+					left: 50%
+					width: 100%
+					opacity: 0
+					visibility: hidden
+					z-index: 2
+					transform: translate(-50%, -50%)
+					transition: all 1s cubic-bezier(.22, .44, 0, 1)
+					.text
+						width: 100%
+				&::after
+					position: absolute
+					pointer-events: none
+					top: 50%
+					left: 50%
+					width: 0
+					height: 0
+					content: ''
+					background-color: rgba($color: $black, $alpha: .6)
+					transform: translate(-50%, -50%)
+					transition: all .8s cubic-bezier(.22, .44, 0, 1)
+				@media screen and ( min-width: 1024.98px)
+					&:hover
+						&::after
+							width: 100%
+							height: 100%
+						.img
+							img
+								transform: scale(1.05)
+						.content
+							opacity: 1
+							visibility: visible
+		.swiper-button-next
+			right: -75px
+		.swiper-button-prev
+			left: -75px
+		@media screen and ( max-width: 575.98px)
+			.column-slide
+				.project-item
+					.content
+						position: static
+						opacity: 1
+						visibility: visible
+						transform: unset
+						background-color: $opacity
+						padding: 15px 0
+			.swiper-button-next,
+			.swiper-button-prev
+				display: none
+		.swiper-pagination
+			width: auto !important
+			bottom: 10px
+			left: 50%
+			transform: translateX(-50%)
+			&-bullet
+				width: 15px
+				height: 15px
+				&-active
+					background-color: $main
+			@media screen and ( min-width: 576px)
+				display: none
