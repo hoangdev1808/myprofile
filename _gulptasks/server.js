@@ -7,6 +7,7 @@ import bSync from "browser-sync";
 
 import jsCore from "./core-js"
 import jsTask from "./script"
+import jsFullPageTask from "./fullpage"
 import pugTask from "./html"
 import cssCore from "./core-css"
 import sassTask from "./css"
@@ -27,8 +28,12 @@ export const server = () => {
 	})
 
 	watch([
-		"src/js/*.js"
+		"src/js/main.js"
 	], series(jsTask));
+
+	watch([
+		"src/js/fullpage.js"
+	], series(jsFullPageTask));
 
 	watch([
 		"src/**/**.pug"

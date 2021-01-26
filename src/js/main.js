@@ -3,7 +3,7 @@
 
 // }
 /*==================== SHOW SCROLL TOP ====================*/
-function scrollTop() {
+const scrollTop = () => {
 	let headerHeight = $("header").outerHeight();
 	let bannerHeight = $("#section-banner").outerHeight();
 	$(window).scroll(function () {
@@ -23,19 +23,23 @@ function scrollTop() {
 }
 
 /*==================== MAIN MENU MOBILE ====================*/
-function mainMenu() {
+const mainMenu = () => {
 	$("header .navbar")
 		.find(".btn-toggle")
 		.on("click", function () {
 			$(this).toggleClass("active");
-			$("header .navbar .navbar-menu").find("ul").toggleClass("active");
 			$("#overlay").toggleClass("active");
 		});
+	$("#overlay").on('click', function () {
+		let $this = $(this);
+		$this.removeClass('active');
+		$('.btn-toggle').removeClass('active');
+	})
 }
 
 /*==========LISTBANNER SLIDER==========*/
-function listBanner() {
-	var myswiper = new Swiper(".home-banner .swiper-container", {
+const listBanner = () => {
+	let myswiper = new Swiper(".home-banner .swiper-container", {
 		loop: false,
 		speed: 2000,
 		effect: "fade",
@@ -54,9 +58,33 @@ function listBanner() {
 	});
 }
 
+//*===========================CHECK FULLPAGE=================*//
+const checkFullPage = () => {
+	if ($('.full-page').length >= 1) {
+		$('body').addClass('overflow');
+	} else {
+		$('body').removeClass('overflow');
+	}
+}
+// ===========================CHECK BANNER=========================//
+const checkLayoutBanner = () => {
+	const pagesBanner = $("#pagebanner");
+	const heightHeader = $("header").outerHeight();
+	const mainBanner = $("#home-banner");
+	if (mainBanner.length >= 1) {
+		$("main").css("padding-top", 0);
+	} else if (pagesBanner.length >= 1) {
+		$("main").css("padding-top", heightHeader);
+	} else {
+		$("main").css("padding-top", heightHeader);
+	}
+};
 /*==================== LOAD FUNCTION ====================*/
 $(document).ready(function () {
 	scrollTop();
 	mainMenu();
 	listBanner();
+	checkFullPage();
+	// checkLayoutBanner();
 });
+

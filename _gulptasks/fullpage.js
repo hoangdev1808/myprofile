@@ -8,15 +8,15 @@ import babel from "gulp-babel";
 import rename from "gulp-rename";
 import sourcemap from "gulp-sourcemaps";
 
-export const jsTask = () => {
-	return src(["src/js/main.js"])
+export const jsFullPageTask = () => {
+	return src(["src/js/fullpage.js"])
 		.pipe(plumber())
 		.pipe(babel({
 			presets: ["@babel/preset-env"]
 		}))
 		.pipe(uglifyBabel())
-		.pipe(rename("main.min.js"))
+		.pipe(rename("fullpage.min.js"))
 		.pipe(dest("dist/js"))
 }
 
-module.exports = jsTask;
+module.exports = jsFullPageTask;

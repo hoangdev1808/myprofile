@@ -6,6 +6,7 @@ import {
 // Import tasks
 import server from "./_gulptasks/server";
 import jsTask from "./_gulptasks/script";
+import jsFullPageTask from "./_gulptasks/fullpage";
 import pugTask from "./_gulptasks/html";
 import sassTask from "./_gulptasks/css";
 import jsCore from "./_gulptasks/core-js";
@@ -32,6 +33,7 @@ exports.default = series(
 	),
 	sassTask,
 	jsTask,
+	jsFullPageTask,
 	pugTask,
 	server,
 )

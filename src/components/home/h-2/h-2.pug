@@ -1,17 +1,3 @@
-section.kv-section.home-project
+section#about.section(setBackground='./img/banner/b-1.jpg')
 	.container
-		.main-title.color-main dự án nổi bật
-		.wrapper-slider
-			.swiper-container.column-slide
-				.swiper-wrapper
-					-for(i=1; i<7; i++)
-						.swiper-slide
-							.project-item
-								.img
-									a(href="")
-										img.lazyload(data-src="./img/index/project-"+i+".png", alt="")
-								.content.d-flex.align-center
-									a(href="").text.f-30.fw-700.color-white.text-center HADO CENTROSA GARDEN
-			.swiper-button-next
-			.swiper-button-prev
-			.swiper-pagination
+		h1 ABOUT
