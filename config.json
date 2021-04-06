@@ -8,7 +8,8 @@
 		"src/_plugins/**.js",
 		"src/_plugins/**/**.min.js",
 		"bower_components/lazysizes/lazysizes.js",
-		"bower_components/fancybox/dist/jquery.fancybox.min.js"
+		"bower_components/fancybox/dist/jquery.fancybox.min.js",
+		"bower_components/materialize/dist/js/materialize.min.js"
 	],
 	"css": [
 		"src/_plugins/font.css",

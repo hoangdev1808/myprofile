@@ -1,26 +1,57 @@
-<!-- HEADER -->
 header
-	nav.navbar
-		.container.d-flex.align-center
-			.navbar-menu.d-flex.align-center.justify-between
-				a.navbar-brand(href="")
-					img(src="./img/logo.png" alt="")
-			.btn.btn-toggle
-				span
-				span
-				span
-				span
-#overlay
-	ul
-		li.nav-item.active
-			a.nav-link.f-36.fw-700.color-text.text-uppercase(href='#home') Trang Chủ
-		li.nav-item
-			a.nav-link.f-36.fw-700.color-text.text-uppercase(href='#about') Giới Thiệu
-		li.nav-item
-			a.nav-link.f-36.fw-700.color-text.text-uppercase(href='#services') Dịch Vụ
-		li.nav-item
-			a.nav-link.f-36.fw-700.color-text.text-uppercase(href='#project') Dự Án
-		li.nav-item
-			a.nav-link.f-36.fw-700.color-text.text-uppercase(href='#project') Blog
-		li.nav-item
-			a.nav-link.f-36.fw-700.color-text.text-uppercase(href='#contact') Liên Hệ
+	.nav-top
+		.container.d-flex.align-center.justify-between
+			ul.socail.d-flex
+				li 
+					a(href="") 
+						em.ri-facebook-fill
+				li 
+					a(href="")
+						em.ri-youtube-fill 
+				li 
+					a(href="") 
+						em.ri-skype-fill
+				li 
+					a(href="") 
+						em.ri-messenger-fill
+			.wrapper-right.d-flex.align-center.center
+				.contact-wrapper.d-flex.align-center 
+					a(href="") 
+						em.ri-phone-fill
+						span 093 177 1893
+					a(href="") 
+						em.ri-mail-fill
+						span hoangdev1808@gmail.com
+			.account-wrapper.d-flex.align-center
+				a.account-icon(href='')
+					em.ri-user-fill
+				ul.wrap.d-flex.align-center
+					li
+						a.text(href='') Đăng nhập / 
+					li
+						a.text(href='') Đăng ký
+	nav
+		.nav-wrapper.container.d-flex
+			a.navbar-nav(href='#')
+				img(src="./img/logo.png" alt="")
+			a.sidenav-trigger(href='#' data-target='mobile')
+				i.material-icons menu
+			ul.hide-on-med-and-down.ml-auto
+				li.active
+					a.f-14.fw-700.color-text.text-uppercase(href='#home') Trang chủ
+				li
+					a.f-14.fw-700.color-text.text-uppercase(href='#about') Giới thiệu
+				li
+					a.f-14.fw-700.color-text.text-uppercase(href='#about') Dịch vụ
+				li
+					a.f-14.fw-700.color-text.text-uppercase(href='#project') Dự án
+				li
+					a.f-14.fw-700.color-text.text-uppercase(href='#project') Blog
+				li
+					a.f-14.fw-700.color-text.text-uppercase(href='#contact') Liên hệ
+			form.search-box(action="") 
+				.form-group 
+					input(type="text" placeholder="Tìm kiếm")
+					button 
+						em.ri-search-line
+	ul#mobile.sidenav
